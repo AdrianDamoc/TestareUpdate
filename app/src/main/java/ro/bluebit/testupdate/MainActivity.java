@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
         AppUpdater appUpdater = new AppUpdater(this)
                 .setUpdateFrom(UpdateFrom.GITHUB)
+                .setGitHubUserAndRepo("AdrianDamoc", "TestareUpdate")
+                .setTitleOnUpdateAvailable("Update available")
                 .setDisplay(Display.NOTIFICATION);
         appUpdater.start();
     }
