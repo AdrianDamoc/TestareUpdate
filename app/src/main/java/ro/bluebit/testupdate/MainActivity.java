@@ -38,9 +38,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onSuccess(Update update, Boolean isUpdateAvailable) {
                         Log.d("Latest Version", update.getLatestVersion());
                         Log.d("Latest Version Code", String.valueOf(update.getLatestVersionCode()));
-                        Log.d("Release notes", update.getReleaseNotes());
                         Log.d("URL", String.valueOf(update.getUrlToDownload()));
-                        Log.d("Is update available?", Boolean.toString(isUpdateAvailable));
                     }
 
                     @Override
