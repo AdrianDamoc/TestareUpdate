@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         versiune=findViewById(R.id.versiune_id);
 
         UpdateVers2();
+        UpdateVersiune();
     }
 
 
