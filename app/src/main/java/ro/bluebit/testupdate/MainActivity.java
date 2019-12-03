@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void UpdateVersiune(){
         AppUpdater appUpdater = new AppUpdater(this)
-                .setUpdateFrom(UpdateFrom.GITHUB)
-                .setGitHubUserAndRepo("AdrianDamoc", "TestareUpdate")
+                .setUpdateFrom(UpdateFrom.XML)
+                .setUpdateXML("https://raw.githubusercontent.com/AdrianDamoc/TestareUpdate/master/app/update.xml")
                 .setTitleOnUpdateAvailable("Update available")
                 .setDisplay(Display.NOTIFICATION);
         appUpdater.start();
