@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.github.javiersantos.appupdater.AppUpdater;
 import com.github.javiersantos.appupdater.enums.Display;
 import com.github.javiersantos.appupdater.enums.UpdateFrom;
+import com.github.javiersantos.appupdater.objects.Update;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,11 +19,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         versiune=findViewById(R.id.versiune_id);
-        AppUpdater appUpdater = new AppUpdater(this);
-        appUpdater.setUpdateFrom(UpdateFrom.GITHUB);
-        appUpdater.setGitHubUserAndRepo("AdrianDamoc", "TestareUpdate");
-        appUpdater.setTitleOnUpdateAvailable("Update available");
-        appUpdater.setDisplay(Display.NOTIFICATION);
+        UpdateVersiune();
+    }
+
+    public void UpdateVersiune(){
+        AppUpdater appUpdater = new AppUpdater(this)
+                .setUpdateFrom(UpdateFrom.GITHUB)
+                .setGitHubUserAndRepo("AdrianDamoc", "TestareUpdate")
+                .setTitleOnUpdateAvailable("Update available")
+                .setDisplay(Display.NOTIFICATION);
         appUpdater.start();
     }
 }
