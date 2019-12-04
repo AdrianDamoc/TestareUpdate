@@ -26,29 +26,6 @@ public class MainActivity extends AppCompatActivity {
         //UpdateVers2();
         UpdateVersiune();
     }
-
-
-    public void UpdateVers2(){
-        AppUpdaterUtils appUpdaterUtils = new AppUpdaterUtils(this)
-                .setUpdateFrom(UpdateFrom.XML)
-                .setGitHubUserAndRepo("AdrianDamoc","TestareUpdate")
-                .setUpdateXML("https://raw.githubusercontent.com/AdrianDamoc/TestareUpdate/master/app/update.xml")
-
-                .withListener(new AppUpdaterUtils.UpdateListener() {
-                    @Override
-                    public void onSuccess(Update update, Boolean isUpdateAvailable) {
-                        Log.d("Latest Version", update.getLatestVersion());
-                        Log.d("Latest Version Code", String.valueOf(update.getLatestVersionCode()));
-                        Log.d("URL", String.valueOf(update.getUrlToDownload()));
-                    }
-
-                    @Override
-                    public void onFailed(AppUpdaterError error) {
-                        Log.d("AppUpdater Error", "Something went wrong");
-                    }
-                });
-        appUpdaterUtils.start();
-    }
     public void UpdateVersiune(){
         AppUpdater appUpdater = new AppUpdater(this)
                 .setUpdateFrom(UpdateFrom.XML)
@@ -58,4 +35,28 @@ public class MainActivity extends AppCompatActivity {
                 .setDisplay(Display.NOTIFICATION);
         appUpdater.start();
     }
+//
+//
+//    public void UpdateVers2(){
+//        AppUpdaterUtils appUpdaterUtils = new AppUpdaterUtils(this)
+//                .setUpdateFrom(UpdateFrom.XML)
+//                .setGitHubUserAndRepo("AdrianDamoc","TestareUpdate")
+//                .setUpdateXML("https://raw.githubusercontent.com/AdrianDamoc/TestareUpdate/master/app/update.xml")
+//
+//                .withListener(new AppUpdaterUtils.UpdateListener() {
+//                    @Override
+//                    public void onSuccess(Update update, Boolean isUpdateAvailable) {
+//                        Log.d("Latest Version", update.getLatestVersion());
+//                        Log.d("Latest Version Code", String.valueOf(update.getLatestVersionCode()));
+//                        Log.d("URL", String.valueOf(update.getUrlToDownload()));
+//                    }
+//
+//                    @Override
+//                    public void onFailed(AppUpdaterError error) {
+//                        Log.d("AppUpdater Error", "Something went wrong");
+//                    }
+//                });
+//        appUpdaterUtils.start();
+//    }
+
 }
