@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         versiune=findViewById(R.id.versiune_id);
 
-        UpdateVers2();
+        //UpdateVers2();
         UpdateVersiune();
     }
 
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 .setUpdateFrom(UpdateFrom.XML)
                 .setGitHubUserAndRepo("AdrianDamoc","TestareUpdate")
                 .setUpdateXML("https://raw.githubusercontent.com/AdrianDamoc/TestareUpdate/master/app/update.xml")
-                //...
+
                 .withListener(new AppUpdaterUtils.UpdateListener() {
                     @Override
                     public void onSuccess(Update update, Boolean isUpdateAvailable) {
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     public void UpdateVersiune(){
         AppUpdater appUpdater = new AppUpdater(this)
                 .setUpdateFrom(UpdateFrom.XML)
+                .setGitHubUserAndRepo("AdrianDamoc","TestareUpdate")
                 .setUpdateXML("https://raw.githubusercontent.com/AdrianDamoc/TestareUpdate/master/app/update.xml")
                 .setTitleOnUpdateAvailable("Update available")
                 .setDisplay(Display.NOTIFICATION);
